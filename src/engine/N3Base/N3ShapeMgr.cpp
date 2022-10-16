@@ -101,8 +101,7 @@ bool CN3ShapeMgr::Load(HANDLE hFile) {
 #endif
 #endif // end of #ifndef _N3GAME
 
-    char szBuff[128];
-    int  iSC = 0;
+    int iSC = 0;
     if (!m_Shapes.empty()) {
         ReleaseShapes();
     }
@@ -159,7 +158,8 @@ bool CN3ShapeMgr::Load(HANDLE hFile) {
 #ifdef _REPENT
                 CGameProcedure::RenderLoadingBar(80 + 15 * i / iSC);
 #else
-                int iLoading = (i + 1) * 100 / iSC;
+                char szBuff[128]{};
+                int  iLoading = (i + 1) * 100 / iSC;
                 sprintf(szBuff, "Loading Objects... %d %%", iLoading);
                 pUILoading->Render(szBuff, iLoading);
 #endif
@@ -831,7 +831,7 @@ bool CN3ShapeMgr::CheckCollisionCamera(__Vector3 & vEyeResult, const __Vector3 &
 #endif // end of #ifndef _3DSERVER
 
 #ifndef _3DSERVER
-void CN3ShapeMgr::RenderCollision(__Vector3 & vPos) {
+void CN3ShapeMgr::RenderCollision(const __Vector3 & vPos) {
     int x = (int)(vPos.x / CELL_MAIN_SIZE);
     int z = (int)(vPos.z / CELL_MAIN_SIZE);
 

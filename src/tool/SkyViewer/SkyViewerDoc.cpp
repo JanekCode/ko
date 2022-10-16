@@ -1,7 +1,7 @@
 // SkyViewerDoc.cpp : implementation of the CSkyViewerDoc class
 //
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "SkyViewer.h"
 
 #include "SkyViewerDoc.h"
@@ -87,6 +87,5 @@ void CSkyViewerDoc::OnFileSaveAsGameFormat() {
         return;
     }
 
-    std::string szFN = dlg.GetPathName();
-    m_Sky.SaveToFile(szFN);
+    m_Sky.SaveToFile(dlg.GetPathName().GetString());
 }

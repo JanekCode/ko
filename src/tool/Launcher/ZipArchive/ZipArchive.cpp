@@ -5,7 +5,7 @@
 //  For conditions of distribution and use, see copyright notice in ZipArchive.h
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "ZipArchive.h"
 #include <direct.h>
 #include <stdlib.h> // for qsort
@@ -73,7 +73,7 @@ bool CZipArchive::IsClosed(bool bArchive) {
 }
 
 void CZipArchive::ThrowError(int err) {
-    AfxThrowZipException(err, IsClosed() ? _T("") : m_storage.m_pFile->GetFilePath());
+    AfxThrowZipException(err, IsClosed() ? _T("") : m_storage.m_pFile->GetFilePath().GetString());
 }
 
 bool CZipArchive::DeleteFile(WORD uIndex) {
@@ -615,7 +615,7 @@ bool CZipArchive::ExtractFile(WORD uIndex, LPCTSTR lpszPath, bool bFullPath, LPC
 
     CZipFileHeader header;
     GetFileInfo(header, uIndex); // to ensure that slash and oem conversions take place
-    CString szFile = lpszPath, szFileName = lpszNewName ? lpszNewName : header.GetFileName();
+    CString szFile = lpszPath, szFileName = lpszNewName ? CString(lpszNewName) : header.GetFileName();
     szFile.TrimRight(_T("\\"));
     szFile += _T("\\") +
               (bFullPath ? GetFileDirAndName(szFileName)

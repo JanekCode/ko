@@ -5,7 +5,7 @@
 //  For conditions of distribution and use, see copyright notice in ZipArchive.h
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "ZipStorage.h"
 #include "ZipArchive.h"
 
@@ -199,7 +199,7 @@ void CZipStorage::Close(bool bAfterException) {
 }
 
 CString CZipStorage::GetTdVolumeName(bool bLast, LPCTSTR lpszZipName) {
-    CString szFilePath = lpszZipName ? lpszZipName : m_pFile->GetFilePath();
+    CString szFilePath = lpszZipName ? CString(lpszZipName) : m_pFile->GetFilePath();
     CString szPath = CZipArchive::GetFilePath(szFilePath);
     CString szName = CZipArchive::GetFileTitle(szFilePath);
     CString szExt;
@@ -224,7 +224,7 @@ void CZipStorage::NextDisk(int iNeeded, LPCTSTR lpszFileName) {
     CString szFileName;
     bool    bPkSpan = (m_iSpanMode == pkzipSpan);
     if (bPkSpan) {
-        szFileName = lpszFileName ? lpszFileName : m_pFile->GetFilePath();
+        szFileName = lpszFileName ? CString(lpszFileName) : m_pFile->GetFilePath();
     } else {
         szFileName = GetTdVolumeName(false, lpszFileName);
     }

@@ -1,7 +1,7 @@
 // N3TexViewerDoc.cpp : implementation of the CN3TexViewerDoc class
 //
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "N3TexViewer.h"
 #include "N3TexViewerDoc.h"
 
@@ -281,7 +281,5 @@ void CN3TexViewerDoc::OnFileSaveAsBitmap() {
         return;
     }
 
-    CString     szPath = dlg.GetPathName();
-    std::string szPath2 = szPath;
-    m_pTex->SaveToBitmapFile(szPath2);
+    m_pTex->SaveToBitmapFile(dlg.GetPathName().GetString());
 }

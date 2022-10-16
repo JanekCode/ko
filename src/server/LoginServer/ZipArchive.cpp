@@ -5,7 +5,7 @@
 //  For conditions of distribution and use, see copyright notice in ZipArchive.h
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "ZipArchive.h"
 #include <direct.h>
 #include <stdlib.h> // for qsort
@@ -59,7 +59,7 @@ bool CZipArchive::IsClosed(bool bArchive) {
 }
 
 void CZipArchive::ThrowError(int err) {
-    AfxThrowZipException(err, IsClosed() ? "" : m_storage.m_file.GetFilePath());
+    AfxThrowZipException(err, IsClosed() ? "" : m_storage.m_file.GetFilePath().GetString());
 }
 
 bool CZipArchive::DeleteFile(WORD uIndex) {

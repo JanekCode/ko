@@ -1,7 +1,7 @@
 // MainFrm.cpp : implementation of the CMainFrame class
 //
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "N3ME.h"
 
 #include "MainFrm.h"
@@ -662,7 +662,7 @@ void CMainFrame::OnResourcePathSet() {
         return;
     }
 
-    std::string szPath = dlg.GetPath();
+    std::string szPath(dlg.GetPath().GetString());
     CN3Base::PathSet(szPath); // 경로 설정..
     m_wndDlgBar.SetDlgItemText(IDC_E_PATH, szPath.c_str());
 

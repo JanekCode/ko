@@ -832,7 +832,7 @@ typedef struct __TABLE_UI_RESRC {
     std::string szCmdEdit;                  // 75 TODO: implement
     std::string szKnightsCrest;             // 76 TODO: implement
     std::string szShoppingMall;             // 77 TODO: implement
-    std::string szKaLevelGuide;             // 78 TODO: implement
+    std::string szLevelGuide;               // 78
     std::string szWarfareNpc;               // 79 TODO: implement
     std::string szWarfarePetition;          // 80 TODO: implement
     std::string szCastleUnion;              // 81 TODO: implement
@@ -852,7 +852,7 @@ typedef struct __TABLE_UI_RESRC {
     std::string szKaCatapult;               // 95 TODO: implement
     std::string szDisguiseRing;             // 96 TODO: implement
     std::string szMsgBoxOk;                 // 97 TODO: implement
-    std::string szMsgBoxOkCancel;           // 98 TODO: implement
+    std::string szMsgBoxOkCancel;           // 98
     std::string szWhisper_open;             // 99 TODO: implement
     std::string szWhisper_close;            // 100 TODO: implement
     std::string szKnights_crest_chr;        // 101 TODO: implement
@@ -1308,6 +1308,7 @@ const int ID_SOUND_ITEM_WEAPON_IN_INVENTORY = 2002;
 const int ID_SOUND_ITEM_ARMOR_IN_INVENTORY = 2003;
 const int ID_SOUND_GOLD_IN_INVENTORY = 3000;
 const int ID_SOUND_SKILL_THROW_ARROW = 5500;
+const int ID_SOUND_BGM_LOGIN = 35;
 const int ID_SOUND_BGM_TOWN = 20000;
 const int ID_SOUND_BGM_KA_BATTLE = 20002;
 const int ID_SOUND_BGM_EL_BATTLE = 20003;

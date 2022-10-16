@@ -1,7 +1,7 @@
 // MainFrm.cpp : implementation of the CMainFrame class
 //
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "N3Viewer.h"
 
 #include "N3ViewerDoc.h"
@@ -209,10 +209,7 @@ void CMainFrame::OnProjectSet() {
         return;
     }
 
-    CString szPath = dlg.GetPath();
-
-    std::string szPath2 = szPath;
-    CN3Base::PathSet(szPath2);
+    CN3Base::PathSet(dlg.GetPath().GetString());
 }
 
 void CMainFrame::OnAddLod() {
