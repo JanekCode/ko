@@ -40,10 +40,7 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <PropertyGroup Label="UserMacros">
-    <SrcDir>$(ProjectDir)..</SrcDir>
-    <VendorDir>$(SrcDir)\vendor</VendorDir>
-  </PropertyGroup>
+  <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)build\$(Configuration)\</OutDir>
     <LinkIncremental>true</LinkIncremental>
@@ -62,18 +59,18 @@
       <SDLCheck>true</SDLCheck>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>StdAfx.h</PrecompiledHeaderFile>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_N3GAME;_CRT_SECURE_NO_WARNINGS;DIRECTINPUT_VERSION=0x0800;_WIN32_WINNT=0x0502;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)res;$(SrcDir)\common;$(SrcDir)\engine;$(VendorDir)\spdlog\include;$(VendorDir)\jpeglib\include;$(WindowsSDK_IncludePath);$(VendorDir)\DXSDK9\Include</AdditionalIncludeDirectories>
-      <AdditionalOptions>/wd4018 /wd4091 /wd4244 /wd4267 /wd4477 /wd4838 /wd6031 /wd26495 /wd4102 %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_N3GAME;_CRT_SECURE_NO_WARNINGS;DIRECTINPUT_VERSION=0x0800;_WIN32_WINNT=0x0600;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)res;$(ProjectDir)..\engine;$(WindowsSDK_IncludePath);$(ProjectDir)..\vendor\DXSDK9\Include</AdditionalIncludeDirectories>
+      <AdditionalOptions>/wd4018 /wd4091 /wd4244 /wd4267 /wd4477 /wd4838 /wd6031 /wd26495 %(AdditionalOptions)</AdditionalOptions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <SupportJustMyCode>true</SupportJustMyCode>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <AdditionalDependencies>spdlogd.lib;jpegd.lib;implode.lib;d3d9.lib;d3dx9.lib;dsound.lib;ddraw.lib;dxguidd.lib;dinput8d.lib;winmm.lib;imm32.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>..\engine\JPEG\jpegLib.lib;implode.lib;d3d9.lib;d3dx9.lib;dsound.lib;ddraw.lib;dxguidd.lib;dinput8d.lib;winmm.lib;imm32.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>libc.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <AdditionalLibraryDirectories>$(VendorDir)\spdlog\lib;$(VendorDir)\jpeglib\lib;$(VendorDir)\DXSDK9\Lib\x86;$(UniversalCRT_LibraryPath_x86)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\vendor\DXSDK9\Lib\x86;$(UniversalCRT_LibraryPath_x86)</AdditionalLibraryDirectories>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
     <Midl>
@@ -97,18 +94,18 @@
       <SDLCheck>true</SDLCheck>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>StdAfx.h</PrecompiledHeaderFile>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_N3GAME;_CRT_SECURE_NO_WARNINGS;DIRECTINPUT_VERSION=0x0800;_WIN32_WINNT=0x0502;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)res;$(SrcDir)\common;$(SrcDir)\engine;$(VendorDir)\spdlog\include;$(VendorDir)\jpeglib\include;$(WindowsSDK_IncludePath);$(VendorDir)\DXSDK9\Include</AdditionalIncludeDirectories>
-      <AdditionalOptions>/wd4018 /wd4091 /wd4244 /wd4267 /wd4477 /wd4838 /wd6031 /wd26495 /wd4102 %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_N3GAME;_CRT_SECURE_NO_WARNINGS;DIRECTINPUT_VERSION=0x0800;_WIN32_WINNT=0x0600;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)res;$(ProjectDir)..\engine;$(WindowsSDK_IncludePath);$(ProjectDir)..\vendor\DXSDK9\Include</AdditionalIncludeDirectories>
+      <AdditionalOptions>/wd4018 /wd4091 /wd4244 /wd4267 /wd4477 /wd4838 /wd6031 /wd26495 %(AdditionalOptions)</AdditionalOptions>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <WholeProgramOptimization>true</WholeProgramOptimization>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <AdditionalDependencies>spdlog.lib;jpeg.lib;implode.lib;d3d9.lib;d3dx9.lib;dsound.lib;ddraw.lib;dxguid.lib;dinput8.lib;winmm.lib;imm32.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>..\engine\JPEG\jpegLib.lib;implode.lib;d3d9.lib;d3dx9.lib;dsound.lib;ddraw.lib;dxguid.lib;dinput8.lib;winmm.lib;imm32.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>libc.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <AdditionalLibraryDirectories>$(VendorDir)\spdlog\lib;$(VendorDir)\jpeglib\lib;$(VendorDir)\DXSDK9\Lib\x86;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\vendor\DXSDK9\Lib\x86</AdditionalLibraryDirectories>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <LinkTimeCodeGeneration>UseFastLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -135,8 +132,7 @@
     <CustomBuild Include="res\repair1.cur" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\common\JvCryption.h" />
-    <ClInclude Include="..\engine\N3Base\JpegFile.h" />
+    <ClInclude Include="..\engine\JPEG\JpegFile.h" />
     <ClInclude Include="..\engine\N3Base\BitMapFile.h" />
     <ClInclude Include="..\engine\N3Base\DFont.h" />
     <ClInclude Include="..\engine\N3Base\JPEG.H" />
@@ -173,7 +169,6 @@
     <ClInclude Include="..\engine\N3Base\N3IMesh.h" />
     <ClInclude Include="..\engine\N3Base\N3Joint.h" />
     <ClInclude Include="..\engine\N3Base\N3Light.h" />
-    <ClInclude Include="..\engine\N3Base\N3Log.h" />
     <ClInclude Include="..\engine\N3Base\N3Mesh.h" />
     <ClInclude Include="..\engine\N3Base\N3Mng.h" />
     <ClInclude Include="..\engine\N3Base\N3Moon.h" />
@@ -235,6 +230,7 @@
     <ClInclude Include="GrassBoard.h" />
     <ClInclude Include="IMPLODE.H" />
     <ClInclude Include="ItemRepairMgr.h" />
+    <ClInclude Include="JvCryption.h" />
     <ClInclude Include="KnightChrMgr.h" />
     <ClInclude Include="LightMgr.h" />
     <ClInclude Include="LocalInput.h" />
@@ -262,7 +258,7 @@
     <ClInclude Include="PlayerOtherMgr.h" />
     <ClInclude Include="PortalVolume.h" />
     <ClInclude Include="PvsMgr.h" />
-    <ClInclude Include="res/Resource.h" />
+    <ClInclude Include="Resource.h" />
     <ClInclude Include="ServerMesh.h" />
     <ClInclude Include="SharedMem.h" />
     <ClInclude Include="StdAfx.h" />
@@ -283,14 +279,12 @@
     <ClInclude Include="UIInventory.h" />
     <ClInclude Include="UIItemExchange.h" />
     <ClInclude Include="UIKnightsOperation.h" />
-    <ClInclude Include="UILevelGuide.h" />
     <ClInclude Include="UILoading.h" />
     <ClInclude Include="UILogin.h" />
     <ClInclude Include="UIManager.h" />
     <ClInclude Include="UIMessageBox.h" />
     <ClInclude Include="UIMessageBoxManager.h" />
     <ClInclude Include="UIMessageWnd.h" />
-    <ClInclude Include="UIMsgBoxOkCancel.h" />
     <ClInclude Include="UINationSelectDlg.h" />
     <ClInclude Include="UINotice.h" />
     <ClInclude Include="UINPCChangeEvent.h" />
@@ -326,8 +320,7 @@
     <Image Include="res\KnightOnLine.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\common\JvCryption.cpp" />
-    <ClCompile Include="..\engine\N3Base\JpegFile.cpp" />
+    <ClCompile Include="..\engine\JPEG\JpegFile.cpp" />
     <ClCompile Include="..\engine\N3Base\BitMapFile.cpp" />
     <ClCompile Include="..\engine\N3Base\DFont.cpp" />
     <ClCompile Include="..\engine\N3Base\JPEG.CPP" />
@@ -362,7 +355,6 @@
     <ClCompile Include="..\engine\N3Base\N3IMesh.cpp" />
     <ClCompile Include="..\engine\N3Base\N3Joint.cpp" />
     <ClCompile Include="..\engine\N3Base\N3Light.cpp" />
-    <ClCompile Include="..\engine\N3Base\N3Log.cpp" />
     <ClCompile Include="..\engine\N3Base\N3Mesh.cpp" />
     <ClCompile Include="..\engine\N3Base\N3Moon.cpp" />
     <ClCompile Include="..\engine\N3Base\N3PMesh.cpp" />
@@ -465,14 +457,12 @@
     <ClCompile Include="UIInventory.cpp" />
     <ClCompile Include="UIItemExchange.cpp" />
     <ClCompile Include="UIKnightsOperation.cpp" />
-    <ClCompile Include="UILevelGuide.cpp" />
     <ClCompile Include="UILoading.cpp" />
     <ClCompile Include="UILogin.cpp" />
     <ClCompile Include="UIManager.cpp" />
     <ClCompile Include="UIMessageBox.cpp" />
     <ClCompile Include="UIMessageBoxManager.cpp" />
     <ClCompile Include="UIMessageWnd.cpp" />
-    <ClCompile Include="UIMsgBoxOkCancel.cpp" />
     <ClCompile Include="UINationSelectDlg.cpp" />
     <ClCompile Include="UINotice.cpp" />
     <ClCompile Include="UINPCChangeEvent.cpp" />
@@ -503,6 +493,7 @@
   </ItemGroup>
   <ItemGroup>
     <Library Include="Implode.lib" />
+    <Library Include="JvCryption.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
