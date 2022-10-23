@@ -256,9 +256,6 @@
     <ClInclude Include="Compress.h">
       <Filter>Network</Filter>
     </ClInclude>
-    <ClInclude Include="IMPLODE.H">
-      <Filter>Network</Filter>
-    </ClInclude>
     <ClInclude Include="PacketDef.h">
       <Filter>Network</Filter>
     </ClInclude>
@@ -633,6 +630,12 @@
     <ClInclude Include="res/Resource.h" />
     <ClInclude Include="..\common\JvCryption.h">
       <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\Implode.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="UIRookieTip.h">
+      <Filter>Procedure - Main\UI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1139,11 +1142,12 @@
     <ClCompile Include="..\common\JvCryption.cpp">
       <Filter>Network</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="Implode.lib">
+    <ClCompile Include="..\common\Implode.cpp">
       <Filter>Network</Filter>
-    </Library>
+    </ClCompile>
+    <ClCompile Include="UIRookieTip.cpp">
+      <Filter>Procedure - Main\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="res\Cursor_Attack.cur">
